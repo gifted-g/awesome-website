@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',        // ← THIS IS CRITICAL
+  output: 'export',
   typescript: {
     ignoreBuildErrors: true,
   },
