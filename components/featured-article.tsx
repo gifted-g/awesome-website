@@ -111,7 +111,7 @@ duly recognized as a bonafide religious group in the campus.
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
-                <img src="/d2.jpg" alt="Church member praying" className="w-full h-full object-cover" />
+                <img src="/d3.jpg" alt="Church member praying" className="w-full h-full object-cover" />
               </motion.div>
             </motion.div>
           </motion.div>
