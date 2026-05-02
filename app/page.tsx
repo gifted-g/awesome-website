@@ -2,6 +2,7 @@
 
 import Navigation from "@/components/navigation"
 import Hero from "@/components/hero"
+import CommunityBanner from "@/components/community-banner"
 import WorshipSection from "@/components/worship-section"
 import FeaturedArticle from "@/components/featured-article"
 import NewsletterSection from "@/components/newsletter-section"
@@ -19,6 +20,7 @@ export default function Home() {
     >
       <Navigation />
       <Hero />
+      <CommunityBanner />
       <WorshipSection />
       <FeaturedArticle />
       <NewsletterSection />
