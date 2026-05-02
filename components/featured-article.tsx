@@ -61,7 +61,7 @@ export default function FeaturedArticle() {
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.4 }}
           >
-            <img src="/images/c2.jpg" alt="Church member in worship" className="w-full h-full object-cover" />
+            <img src="/c2.jpg" alt="Church member in worship" className="w-full h-full object-cover" />
           </motion.div>
 
           <motion.div className="flex flex-col" variants={contentVariants}>
