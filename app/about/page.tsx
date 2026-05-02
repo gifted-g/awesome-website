@@ -22,7 +22,7 @@ export default function AboutPage() {
         <div className="mb-16">
           <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden border-4 border-blue-500">
             <img
-              src="/images/Church Image.png"
+              src="/Church Image.png"
               alt="Celestial Church of Christ Student Parish Building"
               className="w-full h-full object-cover"
             />
