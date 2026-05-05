@@ -1,16 +1,19 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Geist, Geist_Mono, Playfair_Display, Poppins } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css"
 
 const geistSans = Geist({ subsets: ["latin"], variable: "--font-sans" })
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" })
+const playfairDisplay = Playfair_Display({ subsets: ["latin"], variable: "--font-serif" })
+const poppins = Poppins({ weight: ["400", "500", "600", "700"], subsets: ["latin"], variable: "--font-display" })
 
 export const metadata: Metadata = {
   title: "Celestial Church of Christ - Students Parish FUTA | CCCSP FUTA",
   description: "Welcome to Celestial Church of Christ Students Parish FUTA (CCCSP FUTA). Where we worship God in the beauty of his Holiness. Join us for worship, fellowship, and community.",
-  generator: "CELEFUTA",
+  generator: "CeleFuta app",
   applicationName: "CCCSP FUTA",
   keywords: ["Church", "Celestial", "FUTA", "Worship", "Community", "Faith"],
   creator: "CCCSP FUTA",
@@ -56,10 +59,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body className={`font-sans antialiased`}>
-        {children}
-        <Analytics />
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} ${poppins.variable}`} suppressHydrationWarning>
+      <body className="bg-background text-foreground transition-colors duration-300">
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          <Analytics />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )

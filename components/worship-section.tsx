@@ -42,25 +42,31 @@ export default function WorshipSection() {
   }
 
   return (
-    <section className="py-12 sm:py-16 lg:py-24 bg-gray-50" ref={ref}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-background via-background to-secondary/5 dark:from-background dark:via-background dark:to-primary/5 overflow-hidden" ref={ref}>
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 right-10 w-72 h-72 bg-primary/10 dark:bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 left-10 w-96 h-96 bg-secondary/10 dark:bg-secondary/5 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
-          className="text-center mb-8 sm:mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          className="text-center mb-12 sm:mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: getAnimationDuration(0.6) }}
         >
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-navy-dark mb-2 sm:mb-4 leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-3 sm:mb-4 leading-tight">
             Join Us for Worship
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-base sm:text-lg">
             Gather with a vibrant gospel family, connect lovers, spend time in spirit.
           </p>
         </motion.div>
 
-        {/* Service Cards with staggered animation */}
+        {/* Service Cards with glassmorphism */}
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
           variants={containerVariants}
           initial="initial"
           animate={isVisible ? "animate" : "initial"}
@@ -70,21 +76,26 @@ export default function WorshipSection() {
               key={index}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className="bg-white p-4 sm:p-6 rounded-lg shadow-sm border border-gray-100"
+              className="glass group relative p-6 sm:p-8 rounded-2xl overflow-hidden transition-all duration-300"
               variants={cardVariants}
-              whileHover="whileHover"
+              whileHover={{ y: -12, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15)" }}
             >
-              <h3 className="text-base sm:text-lg font-semibold text-navy-dark mb-2 transition-colors duration-300">
-                {service.title}
-              </h3>
-              <p className="text-xs sm:text-sm text-gray-600 mb-4">{service.time}</p>
-              <motion.p
-                className="text-xl sm:text-2xl font-bold text-gold"
-                animate={hoveredIndex === index ? { scale: 1.1 } : { scale: 1 }}
-                transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              >
-                {service.description}
-              </motion.p>
+              {/* Inner gradient glow */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-primary/20 to-secondary/20 dark:from-primary/10 dark:to-secondary/10"></div>
+              
+              <div className="relative z-10">
+                <h3 className="text-lg sm:text-xl font-display font-semibold text-foreground mb-2 transition-colors duration-300">
+                  {service.title}
+                </h3>
+                <p className="text-sm sm:text-base text-muted-foreground mb-6 font-light">{service.time}</p>
+                <motion.p
+                  className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+                  animate={hoveredIndex === index ? { scale: 1.15 } : { scale: 1 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                >
+                  {service.description}
+                </motion.p>
+              </div>
             </motion.div>
           ))}
         </motion.div>

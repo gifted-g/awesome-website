@@ -1,48 +1,268 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-@theme {
-  --animate-fade-in: fade-in 0.5s ease-in-out;
-  --animate-fade-in-up: fade-in-up 0.5s ease-out;
-  --animate-fade-in-down: fade-in-down 0.5s ease-out;
-  --animate-slide-in: slide-in 0.3s ease-out;
+@custom-variant dark (&:is(.dark *));
 
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+/* Light mode - Modern gradient background */
+:root {
+  --background: #fafafa;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+  --primary: #1e40af;
+  --primary-foreground: #ffffff;
+  --secondary: #6366f1;
+  --secondary-foreground: #ffffff;
+  --muted: #e2e8f0;
+  --muted-foreground: #64748b;
+  --accent: #0ea5e9;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #e2e8f0;
+  --input: #f1f5f9;
+  --ring: #1e40af;
+  --radius: 0.75rem;
+  
+  /* Premium colors */
+  --premium-gold: #d4af37;
+  --premium-blue: #1e3a8a;
+  --premium-purple: #5b21b6;
+  
+  /* Glass effect */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.2);
+}
+
+/* Dark mode - Deep with accent colors */
+.dark {
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  --card: #1e293b;
+  --card-foreground: #f8fafc;
+  --popover: #1e293b;
+  --popover-foreground: #f8fafc;
+  --primary: #60a5fa;
+  --primary-foreground: #0f172a;
+  --secondary: #818cf8;
+  --secondary-foreground: #0f172a;
+  --muted: #334155;
+  --muted-foreground: #cbd5e1;
+  --accent: #06b6d4;
+  --accent-foreground: #0f172a;
+  --destructive: #f87171;
+  --destructive-foreground: #0f172a;
+  --border: #334155;
+  --input: #1e293b;
+  --ring: #60a5fa;
+  
+  /* Premium colors dark */
+  --premium-gold: #fbbf24;
+  --premium-blue: #60a5fa;
+  --premium-purple: #a78bfa;
+  
+  /* Glass effect dark */
+  --glass-bg: rgba(30, 41, 59, 0.7);
+  --glass-border: rgba(148, 163, 184, 0.1);
+}
+
+@theme inline {
+  --font-sans: "Geist", "Geist Fallback";
+  --font-serif: "Playfair Display", serif;
+  --font-display: "Poppins", "Geist Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+}
+
+/* Added comprehensive animations for smooth, modern feel */
+@layer utilities {
+  /* Typography utilities with multiple fonts */
+  .font-display {
+    @apply font-display;
   }
 
-  @keyframes fade-in-up {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .font-serif {
+    @apply font-serif;
   }
 
-  @keyframes fade-in-down {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .text-navy-dark {
+    @apply text-[#1a2b4a] dark:text-[#60a5fa];
   }
 
-  @keyframes slide-in {
-    from {
-      transform: translateX(-100%);
-    }
-    to {
-      transform: translateX(0);
-    }
+  .text-gold {
+    @apply text-[#d4af37] dark:text-[#fbbf24];
+  }
+
+  .bg-navy-dark {
+    @apply bg-[#1a2b4a] dark:bg-[#1e293b];
+  }
+
+  .bg-gold {
+    @apply bg-[#d4af37] dark:bg-[#fbbf24];
+  }
+
+  /* Glassmorphism utilities */
+  .glass {
+    @apply bg-white/70 dark:bg-slate-900/70 backdrop-blur-md border border-white/20 dark:border-slate-700/20;
+  }
+
+  .glass-light {
+    @apply bg-white/50 dark:bg-slate-900/50 backdrop-blur-lg border border-white/30 dark:border-slate-600/30;
+  }
+
+  .glass-dark {
+    @apply bg-white/10 dark:bg-slate-900/30 backdrop-blur-xl border border-white/10 dark:border-slate-700/10;
+  }
+
+  /* Advanced animations */
+  .animate-fade-in {
+    @apply animate-in fade-in duration-700;
+  }
+
+  .animate-fade-in-up {
+    @apply animate-in fade-in slide-in-from-bottom-8 duration-1000;
+  }
+
+  .animate-fade-in-down {
+    @apply animate-in fade-in slide-in-from-top-8 duration-1000;
+  }
+
+  .animate-fade-in-left {
+    @apply animate-in fade-in slide-in-from-left-8 duration-1000;
+  }
+
+  .animate-fade-in-right {
+    @apply animate-in fade-in slide-in-from-right-8 duration-1000;
+  }
+
+  .animate-scale-in {
+    @apply animate-in zoom-in-95 duration-500;
+  }
+
+  .animate-spin-slow {
+    animation: spin 3s linear infinite;
+  }
+
+  .animate-bounce-soft {
+    animation: soft-bounce 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  /* 3D perspective */
+  .perspective {
+    @apply [perspective:1000px];
+  }
+
+  .preserve-3d {
+    @apply [transform-style:preserve-3d];
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    @apply transition-all duration-500 ease-out;
+  }
+
+  .transition-smooth-fast {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  /* GPU acceleration */
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  .will-change-opacity {
+    will-change: opacity;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  /* Text shadows for depth */
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Custom keyframe animations */
+@keyframes soft-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+  }
+  50% {
+    opacity: 0.9;
+    box-shadow: 0 0 20px 10px rgba(59, 130, 246, 0);
+  }
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-bottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes parallax-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }

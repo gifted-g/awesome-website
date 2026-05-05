@@ -17,7 +17,7 @@ export default function CommunityBanner() {
           whileHover={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' }}
         >
           <img
-            src="/Church_Banner.png"
+            src="/images/church-banner.png"
             alt="Welcome to CCCSP FUTA"
             className="w-full h-auto object-cover"
           />
