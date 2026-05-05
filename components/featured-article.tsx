@@ -61,14 +61,14 @@ export default function FeaturedArticle() {
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.4 }}
           >
-            <img src="/images/c2.jpg" alt="Church member in worship" className="w-full h-full object-cover" />
+            <img src="/c2.jpg" alt="Church member in worship" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
           </motion.div>
 
           <motion.div className="flex flex-col justify-center py-6 sm:py-0" variants={contentVariants}>
             {/* Label */}
             <motion.p className="text-xs sm:text-sm font-display font-semibold text-primary dark:text-primary/80 mb-3 sm:mb-4 uppercase tracking-widest" variants={contentVariants}>
-              //About Us
+              About Us
             </motion.p>
 
             {/* Main heading */}
@@ -87,8 +87,8 @@ export default function FeaturedArticle() {
 
             {/* Description */}
             <motion.p className="text-base text-gray-600 leading-relaxed mb-6" variants={contentVariants}>
-              Flatten arrow image arrange vector subtract device frame. Background follower main pen link library layout
-              thumbnail select mask. Layer pencil component team device. Ellipse arrange share link follower.
+            The church is registered under the schools rule and regulations for religious activities and 
+            duly recognized as a bonafide religious group in the campus.
             </motion.p>
 
             {/* Learn more link */}
@@ -110,14 +110,14 @@ export default function FeaturedArticle() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
-                <img src="/images/1.jpg" alt="Church fellowship" className="w-full h-full object-cover" />
+                <img src="/3.jpg" alt="Church fellowship" className="w-full h-full object-cover" />
               </motion.div>
               <motion.div
                 className="relative h-48 lg:h-56 rounded-lg overflow-hidden shadow-lg"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
-                <img src="/images/c2.jpg" alt="Church member praying" className="w-full h-full object-cover" />
+                <img src="8.jpg" alt="Church member praying" className="w-full h-full object-cover" />
               </motion.div>
             </motion.div>
           </motion.div>

@@ -10,15 +10,24 @@ export default function GalleryPageClient() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
 
   const galleryItems = [
-    { id: 1, image: '/images/member-1.jpg', title: 'Church Member', span: 'col-span-1 row-span-1' },
-    { id: 2, image: '/images/member-2.jpg', title: 'In Worship', span: 'col-span-1 row-span-2' },
-    { id: 3, image: '/images/member-3.jpg', title: 'Devoted', span: 'col-span-1 row-span-1' },
-    { id: 4, image: '/images/member-4.jpg', title: 'Celebrating', span: 'col-span-2 row-span-1' },
-    { id: 5, image: '/images/member-5.jpg', title: 'Joyful', span: 'col-span-1 row-span-1' },
-    { id: 6, image: '/images/member-6.jpg', title: 'Peaceful', span: 'col-span-1 row-span-1' },
-    { id: 7, image: '/images/member-7.jpg', title: 'Engaged', span: 'col-span-1 row-span-2' },
-    { id: 8, image: '/images/member-8.jpg', title: 'Praying', span: 'col-span-1 row-span-1' },
-    { id: 9, image: '/images/member-9.jpg', title: 'Community', span: 'col-span-2 row-span-1' },
+    { id: 1, image: '/d1.jpg', title: 'Church Member', span: 'col-span-1 row-span-1' },
+    { id: 2, image: '/d3.jpg', title: 'In Worship', span: 'col-span-1 row-span-2' },
+    { id: 3, image: '/3.jpg', title: 'Devoted', span: 'col-span-1 row-span-1' },
+    { id: 4, image: '/12.jpg', title: 'Celebrating', span: 'col-span-2 row-span-1' },
+    { id: 5, image: '/13.jpg', title: 'Joyful', span: 'col-span-1 row-span-1' },
+    { id: 6, image: '/6.jpg', title: 'Peaceful', span: 'col-span-1 row-span-1' },
+    { id: 7, image: '/7.jpg', title: 'Engaged', span: 'col-span-1 row-span-2' },
+    { id: 8, image: '/11.jpg', title: 'Praying', span: 'col-span-1 row-span-1' },
+    { id: 9, image: '/10.jpg', title: 'Community', span: 'col-span-2 row-span-1' },
+    { id: 8, image: '/37.jpg', title: 'Praying', span: 'col-span-1 row-span-1' },
+    { id: 9, image: '/39.jpg', title: 'Community', span: 'col-span-2 row-span-1' },
+    { id: 8, image: '/38.jpg', title: 'Praying', span: 'col-span-1 row-span-1' },
+    { id: 9, image: '/33.jpg', title: 'Community', span: 'col-span-2 row-span-1' },
+    { id: 8, image: '/32.jpg', title: 'Praying', span: 'col-span-1 row-span-1' },
+    { id: 9, image: '/30.jpg', title: 'Community', span: 'col-span-2 row-span-1' },
+    { id: 4, image: '/4.jpg', title: 'Celebrating', span: 'col-span-2 row-span-1' },
+    { id: 5, image: '/CCC-140.jpg', title: 'Joyful', span: 'col-span-1 row-span-1' },
+    { id: 6, image: '/25.jpg', title: 'Peaceful', span: 'col-span-1 row-span-1' },
   ]
 
   return (

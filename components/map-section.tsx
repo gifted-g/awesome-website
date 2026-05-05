@@ -12,7 +12,7 @@ export default function MapSection() {
     <section 
       className="py-16 lg:py-24 bg-cover bg-center relative"
       style={{
-        backgroundImage: 'url(/images/celefuta-media.jpg)',
+        backgroundImage: 'url(/celefuta-media.jpg)',
         backgroundAttachment: 'fixed',
       }}
       ref={ref}

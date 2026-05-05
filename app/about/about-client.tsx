@@ -13,25 +13,25 @@ export default function AboutClient() {
     {
       title: 'Our History - Part 1',
       text: 'The history of the church development in The Federal University of Technology, Akure is centered on year 1999. Before this year there was precarious existence of a group tagged "focus". It was recorded that they worshipped without observing the totality of service doctrine. Their belief and practice though influenced by their student status was viewed controversial. Following this era, around 1999, some Celestial Students in the University felt the great need and concern to assemble, relate and worship under the aegis of the church. These included Ayo Falayi, Olu Bankole, Remilekun Teniola, Akin Akinlalu, Banji Babatunde among others. They had no permanent site for their devotional activities.',
-      image: '/images/member-1.jpg',
+      image: '/22.jpg',
       imagePosition: 'left'
     },
     {
       title: 'Our History - Part 2',
       text: 'Not long after the establishment of IYANU Parish, the sign post of the church was noticed by the celestial students\' who were eager to discover the church. Authoritatively the motion to relocate the Student Parish to this new site was spearheaded by Wole Oni among others. Eventually the church decided and at large moved en masse to Iyanu Parish and met the waiting hands of the shepherd around October, 2000. The genesis of the church was passed down to the new members who seemed vigorous to move the church forward, though the bible study continued in the campus. The state headquarters of the church was in the full knowledge of the church and gladly embraced the upcoming of the student parish in this new place.',
-      image: '/images/member-3.jpg',
+      image: '/23.jpg',
       imagePosition: 'right'
     },
     {
       title: 'Our History - Part 3',
       text: 'An epochal occasion was held to Gospec Feasting which led to a strong division and eventually anarchy in the church. This took place August/September in year 2001. By this time new members had joined as the University had admitted new students. The concepts of Gospec to the new members not only seemed strange but fanatic and impostory and gradually smothered their anger and dissuaded their vigour and commitment. The effect of the feasting left behind an ugly image for the Parish in Ondo State, as the parish was regarded to belonged to a Rebellion. Several revelations were recorded about the future glory of the parish in terms of congregation size and spiritual glory.',
-      image: '/images/member-5.jpg',
+      image: '/24.jpg',
       imagePosition: 'left'
     },
     {
       title: 'Our History - Part 4',
       text: 'The idea of leaving Iyanu and an independent Student Parish did not go well with pan Gospec members. The tussle and puzzle was interrupted by ASUU strike in year 2002. On resumption back to campus a fresh movie was made in resurgence to reform the student parish that has almost lost its course into the so-called "Egypt of Iyanu Parish". The new course fought for the establishment of a formidable structure of a typical Student Parish with leadership structure and well institutionalized programmes for effective spiritual worship too meet the spiritual and academic objectives of Futariancelestians. A general church meeting was called and a seven-member committee was formed to select a pioneer Excos for the church.',
-      image: '/images/member-7.jpg',
+      image: '/27.jpg',
       imagePosition: 'right'
     }
   ]
@@ -63,7 +63,7 @@ export default function AboutClient() {
             className="relative h-80 sm:h-96 rounded-2xl overflow-hidden border-4 border-primary"
           >
             <img
-              src="/images/church-20image.png"
+              src="/Church Image.png"
               alt="Celestial Church of Christ"
               className="w-full h-full object-cover"
             />
